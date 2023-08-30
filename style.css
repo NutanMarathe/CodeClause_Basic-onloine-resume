@@ -1,0 +1,19 @@
+h1,button {
+    text-align: center;
+    color:black;
+}
+/*#resume-form {
+display: none;
+}*/
+#resume-template {
+    display: none;
+}
+.profimg {
+   /* border: 1px solid rebeccapurple;*/
+    border-radius: 50%;
+    width: 200px;
+}
+.background {
+    background-color: rgb(173, 224, 245);
+
+}

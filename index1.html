@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+    crossorigin="anonymous"/>
+  
+    <link rel="stylesheet" href="style.css"/>
+   
+   
+    <title>Online Resume</title>
+</head>
+<body>
+
+<div class="container" id="resume-form">
+    <h1 class="text-center my-2">Online Resume</h1>
+    <p class="text-center">Basic online resume</p>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Personal Information</h3>
+            <div class="form-group">
+                <label for="nameField">Your Name</label>
+                <input type="text" id="nameField" placeholder="Enter your name" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label for="contactField">Your Contact Number</label>
+                <input type="text" id="contactField" placeholder="Enter your Contact Number" class="form-control">
+                
+            </div>
+            <div class="form-group mt-2">
+                <label for="addField">Your Address</label>
+                 <textarea id="addField"
+                  placeholder="Enter here" 
+                  class="form-control"></textarea>
+            </div>
+            <p class="text-secondary my-2">Importants Links</p>
+            <div class="form-group mt-2">
+                <label for="linkedinField">Linkedin </label>
+                <input type="text" id="linkedinField" placeholder="Enter here" class="form-control">
+            </div>
+            <div class="form-group mt-2">
+                <label for="Git-hubField">Github</label>
+                <input type="text" id="Git-hubField" placeholder="Enter here" class="form-control">
+            </div>
+            <div class="form-group mt-2">
+                <label for="fbField">Facebook</label>
+                <input type="text" id="fbField" placeholder="Enter here" class="form-control">
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <h3>Professional Information</h3>
+            <div class="form-group">
+                <label for="">Objective</label>
+                <textarea  id="objectiveField" placeholder="Enter here" class="form-control" rows="3"></textarea>
+            </div>
+        <div class="form-group mt-2" id="we">
+                <label for="">Work Experience</label>
+                <textarea  placeholder="Enter here"  class="form-control weField"></textarea>
+        <div class="container text-center mt-2" id="weAddButton">
+                <button onclick="addNewwEField()" class=" btn btn-primary btn-sm">Add</button>
+            </div>
+        </div>
+
+       <div class="form-group mt-2" id="aq">
+            <label for="">Academic Qualification</label>
+            <textarea  placeholder="Enter here" class="form-control aqField"></textarea>
+        <div class="container text-center mt-2" id="aqAddButton">
+            <button onclick="addNewAqField()"class=" btn btn-primary btn-sm">Add</button>
+        </div>
+       </div>
+    </div>
+</div>
+<div class="container text-center mt-3">
+        <button onclick="generateResume()" class="btn btn-primary btn-lg">
+            Submit
+        </button>
+    </div>
+ </div>
+
+<!--resume template-->
+<div class="container" id="resume-template">
+    <div class="row">
+        <div class="col-md-4 text-center py-5 background">
+            <!--First col-->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQloftq61cFe4VKJqXGU-4n7MtX18ajx3drukbn5UtCHAAvTvkguzFHal9JeUliQzW3u4w&usqp=CAU"
+             alt=""
+             class="img-fluid profimg"/>
+             <div class="container">
+                <p id="nameT1"></p>
+                <p id="contactT"></p>
+                <p id="addressT"></p>
+
+                <hr />
+                <p id="lT" ><a href=""></a></p>
+                <p id="gitT"><a href=""></a></p>
+                <p id="fbT"><a href=""></a></p>
+
+             </div>
+            </div>
+
+        <div class="col md-8 py-5">
+            <!--Second col-->
+            <h1 id="nameT2" class="text-center" style="font-weight: 800;"> Nutan Ravin Marathe</h1>
+            <!--objective-->
+            <div class="card mt-4">
+                <div class="card-header background">
+                    <h3>Objective</h3>
+                </div>
+                <div class="card-body">
+                    <p id="ObjectiveT">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque assumenda doloribus adipisci vero a nisi quod vel quis maxime nostrum delectus laborum, sed voluptatem. Aliquid cupiditate voluptas delectus nam aperiam obcaecati atque saepe perferendis. Blanditiis quis et ex quo animi ratione unde, porro minima quasi ab! Odit delectus modi necessitatibus!</p>
+                </div>
+            </div>
+            <!--work experience-->>
+            <div class="card mt-4">
+                <div class="card-header background">
+                    <h3>Work Experience</h3>
+                </div>
+                <div class="card-body">
+                   <ul id="weT">
+                    <li></li>
+                   </ul>
+                </div>
+            </div>
+            <!--academic qualification-->
+            <div class="card mt-4">
+                <div class="card-header background">
+                    <h3>Academic Qualification</h3>
+                </div>
+                <div class="card-body">
+                   <ul id="aqT">
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum, maxime?</li>
+                   </ul>
+                </div>
+            </div>
+            <div class="container mt-3 text-center">
+                <button onclick="print()" class="btn background">
+                    Print
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" 
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" 
+        crossorigin="anonymous">
+        </script>
+        <script src="script.js">
+      </script>
+  </body>
+</html>
